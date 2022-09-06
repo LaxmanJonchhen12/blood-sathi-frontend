@@ -45,6 +45,9 @@ const LogoutStyle = styled.div`
 
             #title{
                 padding-left: 1.5rem;
+                text-align: center;
+                font-family: system-ui;
+                font-weight: bolder;
             }
 
             #logout{

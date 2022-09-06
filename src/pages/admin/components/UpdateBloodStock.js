@@ -4,6 +4,8 @@ import Axios from 'axios';
 import BloodstockInfo from "./BloodstockInfo";
 import NavAdmin from "./NavAdmin";
 import Logout from "../../../components/Logout";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 export default function UpdateBloodStock(){
     const [newBloodGroup, setBloodGroup] = useState('');
     const [newUnit, setUnit] = useState(0);
@@ -17,6 +19,7 @@ export default function UpdateBloodStock(){
         }).then((response) => {
             console.log(response);
         });
+        toast.success('Blood Stock Updated', { position: toast.POSITION.BOTTOM_RIGHT })
     }
 
     return(
@@ -44,7 +47,7 @@ export default function UpdateBloodStock(){
                             <option value="bnegative">B Negative B-</option>
                             <option value="abpositive">AB Positive AB+</option>
                             <option value="abnegative">AB Negative AB-</option>
-                            <option value="opostive">O Positive O+</option>
+                            <option value="opositive">O Positive O+</option>
                             <option value="onegative">O Negative O-</option>
                         </select>
                         <label htmlFor="unit">Unit:</label>

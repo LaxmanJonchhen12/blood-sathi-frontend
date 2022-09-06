@@ -1,6 +1,7 @@
 import React, {useState,useEffect, useContext} from "react";
 import styled from "styled-components";
 import Axios from 'axios';
+import blood from "../../../assets/images/blood.png";
 export default function BloodstockInfo(props){
     Axios.defaults.withCredentials = true;
     const [bloodStockData, setBloodStock] = useState([]);
@@ -24,6 +25,9 @@ export default function BloodstockInfo(props){
                                 <div id="blood__group">
                                     {curElm.bloodGroup}
                                 </div>
+                                <div id="logo">
+                                    <img src={blood} id="blood" alt="blood" />
+                                </div>
                                 <div id="blood__unit">
                                     {curElm.unit}
                                 </div>
@@ -42,8 +46,6 @@ display:flex;
 flex-wrap:wrap;
 margin: 1.5rem 0 0 2rem;
 #bloodstock__info{
-
-
     height: 7rem;
     width: 15rem;
     display: flex;
@@ -59,7 +61,7 @@ margin: 1.5rem 0 0 2rem;
 
 #blood__group{
     text-align: right;
-    padding: 1.2rem 2rem 0 0;
+    padding: 1.2rem 0.2rem 0 0;
 }
 
 #blood__unit{

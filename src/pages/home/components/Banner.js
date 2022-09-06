@@ -20,6 +20,13 @@ export default function Banner() {
 }
 
 const Mainstyle = styled.div`
+
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
   #container {
     display: flex;
     justify-content: space-around;
@@ -27,6 +34,7 @@ const Mainstyle = styled.div`
 
     #intro {
       padding-top: 3rem;
+      padding-right: 17rem;
       #intro__txt {
         font-weight: bolder;
         font-size: 2.6rem;

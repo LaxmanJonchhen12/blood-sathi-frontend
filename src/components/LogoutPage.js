@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
 import Navbar from "./Navbar";
-import logout from "../assets/images/logout.svg";
 import logout1 from "../assets/images/logout1.png";
 export default function LogoutPage(){
     return(
@@ -12,7 +11,6 @@ export default function LogoutPage(){
                         <Navbar />
                     </div>
                     <div id="content">
-                        {/* <img src={logout} id="logout" alt="logout" /> */}
                         <img src={logout1} id="logout" alt="logout" />
                         <h2 class="txt" id="main__txt">You Have Been Logged Out</h2>
                         <h4 class="txt" id="sec__txt">Thank You For Using Our Site</h4>

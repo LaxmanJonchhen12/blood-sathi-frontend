@@ -56,7 +56,7 @@ export default function BloodPannel(){
                         <NavAdmin />
                     </div>
                     <div id="route">
-                    <h2>No Blood Request By Patient/Donor</h2>
+                    <h2 id="msg">No Blood Request By Patient/Donor</h2>
                     </div>
                 </div>
             </BloodStyle>
@@ -72,7 +72,7 @@ export default function BloodPannel(){
                     </div>
                     <div id="route">
                         <h2 id="title">Blood Requested</h2>
-                        <h2 id="message">{message}</h2>
+                        <p id="message">{message}</p>
                             <table>
                                 <thead>
                                 <tr>
@@ -143,6 +143,12 @@ const BloodStyle = styled.div`
 
     #route{
         flex:85%;
+
+            #msg{
+                font-family: system-ui;
+                font-size: 1.3rem;
+                padding: 2rem 1rem 1rem 2rem;
+            }
     }
 }
 
@@ -152,6 +158,13 @@ const BloodStyle = styled.div`
         padding:1.5rem 0;
         font-family:system-ui;
         font-weight:bolder;
+    }
+
+    #message{
+        text-align: center;
+        padding: 0 0 1rem 0;
+        font-family: system-ui;
+        font-weight: bolder;
     }
 
     table{

@@ -109,7 +109,7 @@ export default function DonationPannel(){
                             console.log(message);
                         }
                         else if(curElm.DonationStatus === "Approved") {
-                            message = `${curElm.DonatedUnit} Added to the stock`;
+                            message = `${curElm.DonatedUnit} unit Added to the stock`;
                         }
                         else {
                             message = "0 unit added to the stock";

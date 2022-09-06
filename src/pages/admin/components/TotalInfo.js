@@ -1,6 +1,8 @@
 import React, {useState,useEffect} from "react";
 import styled from "styled-components";
 import Axios from 'axios';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouseChimney} from '@fortawesome/free-solid-svg-icons';
 export default function TotalInfo(props){
     Axios.defaults.withCredentials = true;
     const [totalData, setTotalData] = useState([]);
@@ -13,6 +15,7 @@ export default function TotalInfo(props){
         getTotalData();
     }, [])
     console.log(totalData);
+    let icon="faHouseChimney";
 
     return(
             <TotalStyle>
@@ -21,7 +24,7 @@ export default function TotalInfo(props){
                         return(
                             <div id="total__container">
                             <div id="logo">
-        
+                            {/* <FontAwesomeIcon icon={faHouseChimney} className="icon" /> */}
                             </div>
                             <div id="detail">
                                 <div id="title">{curElm.title}</div>

@@ -65,7 +65,7 @@ export default function BloodRequestDonor(props){
                             <option value="bnegative">B Negative B-</option>
                             <option value="abpositive">AB Positive AB+</option>
                             <option value="abnegative">AB Negative AB-</option>
-                            <option value="opostive">O Positive O+</option>
+                            <option value="opositive">O Positive O+</option>
                             <option value="onegative">O Negative O-</option>
                         </select> <br /> <br />
                         <label htmlfor="requestedunit">
@@ -92,7 +92,7 @@ export default function BloodRequestDonor(props){
                         }}
                         >
                         </textarea> <br /> <br />
-                        <button onClick={requestBlood} id="request">request blood</button>
+                        <button onClick={requestBlood} id="request">Request Blood</button>
                     </form>
                 </div>
             </div>
