@@ -4,8 +4,8 @@ import Axios from 'axios';
 import Navbar from "../../../components/Navbar";
 import registerdonor from "../../../assets/images/registerdonor.svg";
 import { Link} from "react-router-dom";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
+
 export default function RegisterDonor(){
 
     const [nameReg, setnameReg] = useState('');
@@ -17,10 +17,56 @@ export default function RegisterDonor(){
     const [addressReg, setAddressReg] = useState('');
     const [usernameReg, setUsernameReg] = useState('');
     const [passwordReg, setPaswordReg] = useState('');
+    const [registerStatus, setRegisterStatus] = useState(``);
+    let registerErrorMessages = [];
 
     Axios.defaults.withCredentials = true;
 
+    
     const register = () => {
+        registerErrorMessages = [];
+
+        const nameRegex  = /\d/;
+        if(nameReg.length === 0 ) {
+            registerErrorMessages.push('User full name is empty');
+        } else if ( nameReg.match(nameRegex) ) {
+            registerErrorMessages.push("Name should not contain number")
+        }
+
+        let numberOnlyRegExp = /\d/g;
+        if(phoneReg.length === 0 ) {
+            registerErrorMessages.push('User phone number is empty');
+        }else if(!phoneReg.match(numberOnlyRegExp) ) {
+            registerErrorMessages.push('Phone Number Should contain number only')
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if(emailReg.length === 0 ) {
+            registerErrorMessages.push('User email address is empty');
+        } else if( !emailReg.match(emailRegex) ) {
+            registerErrorMessages.push("Please enter valid email");
+        }
+
+        if(usernameReg.length === 0 ) {
+            registerErrorMessages.push('User user name is empty');
+        }
+
+        if(phoneReg.length === 0 ) {
+            registerErrorMessages.push('User password is empty');
+        }
+
+        if(usernameReg.length <=5) {
+            registerErrorMessages.push('User user name should be minimum of 5 characters');
+        }
+
+        if(passwordReg.length <=5) {
+            registerErrorMessages.push('User password should be minimum of 5 characters');
+        }
+        
+        if(registerErrorMessages.length >0 ) {
+            setRegisterStatus( registerErrorMessages.join(" , "));
+            return;
+        }
         Axios.post("http://localhost:3001/registerDonor", {
             Name: nameReg,
             Phone:phoneReg,
@@ -33,8 +79,8 @@ export default function RegisterDonor(){
             Password: passwordReg,
         }).then((response) => {
             console.log(response);
+            setRegisterStatus("Donor Sucessfully Regsisterd");
         });
-        toast("Registered Sucessfully Please Login");
     };
     return(
         <DonorRegisterStyle>
@@ -118,7 +164,11 @@ export default function RegisterDonor(){
                 setPaswordReg(e.target.value);
             }}
             ></input> <br />
-            <button onClick={register} id="register" name="register">Register</button>
+            <button onClick={e => {
+                                   e.preventDefault();
+                                    register();
+                                    } } id="register" name="register">Register</button>
+            <p>{registerStatus}</p>
             <h3 className="txt">Already Signed Up ? <Link to="/donorlogin">Login</Link></h3>
             </form>
             </div>
@@ -183,7 +233,7 @@ const DonorRegisterStyle = styled.div`
         .txt{
             font-family:monospace;
             font-size:1.2rem;
-            padding:0.5rem 0 0 0;
+            padding:0.5rem 0 2rem 0;
         }
     
     }

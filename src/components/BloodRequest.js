@@ -15,6 +15,8 @@ export default function BloodRequest(props){
 
     Axios.defaults.withCredentials = true;
 
+    
+
     const requestBlood = () => {
         Axios.post("http://localhost:3001/bloodrequest", {
             bloodGroup:requestedBloodGroup,
@@ -22,7 +24,7 @@ export default function BloodRequest(props){
             bloodDescription:requestDescription,
             patientId:patientId
         }).then((response) => {
-            console.log(response);
+            console.log("response:",response);
             console.log(state);
             console.log("patient id from context"+ id);
             console.log("patient id from fetch state" + patientId);
@@ -41,6 +43,8 @@ export default function BloodRequest(props){
     console.log(state);
     console.log(id);
     console.log("id from patient fetch" + patientId);
+
+
 
     return(
         <Bloodstyle>
