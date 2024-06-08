@@ -74,6 +74,7 @@ export default function BloodRequestDonor(props){
                         <input type="number" id="requestedunit" name="requestedunit" 
                         placeholder="1 pint"
                         class="input"
+                        min={0}
                         onChange={(e) => {
                             setRequestedUnit(e.target.value);
                         }}

@@ -82,6 +82,7 @@ export default function BloodRequest(props){
                                 onChange={(e) => {
                                     setRequestedUnit(e.target.value);
                                 }}
+                                min={0}
                                 ></input> <br /> <br />
                                 <label htmlfor="requestdescription">
                                     Request Description:

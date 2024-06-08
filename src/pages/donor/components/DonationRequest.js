@@ -72,6 +72,7 @@ export default function DonationRequest(){
                         <input type="number" id="requestedunit" name="requestedunit" 
                         placeholder="1 pint"
                         class="input"
+                        min={0}
                         onChange={(e) => {
                             setDonatedUnit(e.target.value);
                         }}

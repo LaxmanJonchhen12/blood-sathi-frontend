@@ -39,6 +39,9 @@ export default function RegisterDonor(){
         }else if(!phoneReg.match(numberOnlyRegExp) ) {
             registerErrorMessages.push('Phone Number Should contain number only')
         }
+        else if(phoneReg.length <10) {
+            registerErrorMessages.push('Phone Number should be 10 digits')
+        }
 
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if(emailReg.length === 0 ) {
@@ -51,12 +54,12 @@ export default function RegisterDonor(){
             registerErrorMessages.push('User user name is empty');
         }
 
-        if(phoneReg.length === 0 ) {
-            registerErrorMessages.push('User password is empty');
-        }
-
         if(usernameReg.length <=5) {
             registerErrorMessages.push('User user name should be minimum of 5 characters');
+        }
+
+        if(passwordReg.length === 0 ) {
+            registerErrorMessages.push('User password is empty');
         }
 
         if(passwordReg.length <=5) {
@@ -236,6 +239,4 @@ const DonorRegisterStyle = styled.div`
             padding:0.5rem 0 2rem 0;
         }
     
-    }
-
 `;

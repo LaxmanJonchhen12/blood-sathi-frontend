@@ -11,13 +11,10 @@ export default function Features() {
         <div id="txt">
           <h2 id="txt__heading">Why Blood Sathi</h2>
           <p id="desc">
-            Existing Blood managment system in nepal is still traditional and
-            outdated. Most blood bank and hospitals still use register and
-            papers to record their blood information. Donor and Patient also
-            can't properly get necessary blood when needed.Blood sathi takes an
-            intiative to change the old traditional system to keep digital
-            inventory of blood, help donors and patient creating an platform for
-            their all blood needs.
+              In todays time its difficult to get fresh blood in urgent critical situation.
+              People have various hassle and difficulties arranging fresh blood in critical situations.
+              Blood Sathi aims to solve this problem and aims to provide fresh blood to the people
+              in the critical situation when they require.
           </p>
         </div>
       </div>

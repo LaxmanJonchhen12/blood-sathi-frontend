@@ -3,7 +3,7 @@ import styled from "styled-components";
 export default function Footer() {
   return (
     <Footerstyle>
-      <div id="footer">Copyright &copy; 2022 Blood Sathi</div>
+      <div id="footer">Copyright &copy; 2024 Blood Sathi</div>
     </Footerstyle>
   );
 }
